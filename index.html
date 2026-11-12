@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AgriSmart gives farmers practical crop, weather, plant health and sustainable farming guidance.">
+  <meta name="theme-color" content="#173d2b">
+  <title>AgriSmart — Smart Farming Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="AgriSmart home"><span class="brand-mark" aria-hidden="true">✳</span><span>Agri<span>Smart</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#crops">Crops</a><a href="#weather">Weather</a><a href="#disease">Plant health</a><a href="#learn">Farm better</a>
+      </div>
+      <a class="nav-cta" href="#contact">Talk to us <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-shade"></div>
+      <div class="container hero-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> GROW WITH CONFIDENCE</p>
+        <h1>Smart farming<br>for a <em>better future.</em></h1>
+        <p class="hero-description">Practical knowledge, timely weather and simple digital tools to help every farm thrive—season after season.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#crops">Explore crops <span aria-hidden="true">↓</span></a><a class="button button-outline" href="#weather">Get started <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-trust"><span class="trust-icon" aria-hidden="true">✦</span><span>Better decisions begin with good information.</span></div>
+      </div>
+      <a class="hero-scroll" href="#crops" aria-label="Scroll to crop library"><span></span>SCROLL TO GROW</a>
+      <div class="hero-badge"><span class="badge-icon" aria-hidden="true">🌱</span><span><strong>Farming, reimagined</strong><small>Knowledge for every growing season</small></span></div>
+    </section>
+
+    <section class="intro-strip" aria-label="AgriSmart benefits"><div class="container intro-items"><div><span>01</span><strong>Field-ready guidance</strong></div><div><span>02</span><strong>Local weather insights</strong></div><div><span>03</span><strong>Healthier, resilient crops</strong></div></div></section>
+
+    <section class="section crops-section" id="crops">
+      <div class="container">
+        <div class="section-heading heading-row"><div><p class="section-kicker">KNOW WHAT YOU GROW</p><h2>Crop knowledge,<br><em>at your fingertips.</em></h2></div><p class="section-intro">Explore growing essentials for popular crops—from soil and water to the right season and nutrients.</p></div>
+        <div class="crop-toolbar"><label class="search-box"><span aria-hidden="true">⌕</span><input id="crop-search" type="search" placeholder="Search crops..." aria-label="Search crops"><kbd>⌘ K</kbd></label><span class="crop-count" id="crop-count" aria-live="polite">6 crops</span></div>
+        <div class="crop-grid" id="crop-grid" aria-live="polite"></div>
+        <p class="empty-state" id="crop-empty" hidden>No crops match your search. Try another name.</p>
+      </div>
+    </section>
+
+    <section class="weather-section section" id="weather">
+      <div class="container weather-layout">
+        <div class="weather-copy"><p class="section-kicker">A LITTLE CLOSER TO THE SKY</p><h2>Plan your day<br><em>around the weather.</em></h2><p class="section-intro">Check current conditions for your area and make smarter decisions about watering, spraying and fieldwork.</p><div class="weather-note"><span aria-hidden="true">☼</span> Forecast data powered by Open-Meteo</div></div>
+        <div class="weather-card">
+          <div class="weather-card-top"><div><span class="weather-label">LOCAL CONDITIONS</span><h3 id="weather-location">Coimbatore, India</h3></div><span class="weather-icon" id="weather-icon" aria-hidden="true">☀</span></div>
+          <form class="city-form" id="weather-form"><label class="sr-only" for="city-input">Enter a city</label><input id="city-input" type="search" placeholder="Enter a city" value="Coimbatore" required><button class="button button-small" type="submit">Check weather <span aria-hidden="true">→</span></button></form>
+          <p class="weather-status" id="weather-status" role="status">Fetching local conditions…</p>
+          <div class="temperature-row"><strong id="weather-temp">--°</strong><div><span id="weather-description">Loading conditions</span><small>Updated just now</small></div></div>
+          <div class="weather-metrics"><div><span class="metric-symbol" aria-hidden="true">◌</span><span>Humidity</span><strong id="weather-humidity">--%</strong></div><div><span class="metric-symbol" aria-hidden="true">☂</span><span>Rainfall</span><strong id="weather-rain">-- mm</strong></div><div><span class="metric-symbol" aria-hidden="true">↗</span><span>Wind speed</span><strong id="weather-wind">-- km/h</strong></div></div>
+          <p class="weather-footnote">Current conditions are approximate and may differ from your field microclimate.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section disease-section" id="disease">
+      <div class="container disease-layout">
+        <div class="disease-copy"><p class="section-kicker">A HEALTHIER HARVEST STARTS HERE</p><h2>Spot a concern.<br><em>Know your next step.</em></h2><p class="section-intro">Upload a leaf photo to preview our plant-health demo. It offers general educational guidance—not a diagnosis.</p><ul class="check-list"><li><span>✓</span> Simple, clear preventive steps</li><li><span>✓</span> Image preview right in your browser</li><li><span>✓</span> Always consult a local crop expert</li></ul></div>
+        <div class="diagnosis-card"><div class="diagnosis-head"><span class="mini-icon" aria-hidden="true">✳</span><div><strong>Plant health checker</strong><small>Interactive learning demo</small></div><span class="demo-tag">DEMO</span></div>
+          <label class="upload-zone" id="upload-zone" for="leaf-upload"><span class="upload-icon" aria-hidden="true">↑</span><strong>Drop a leaf image here</strong><span>or <u>browse files</u> · JPG, PNG up to 10 MB</span><input id="leaf-upload" type="file" accept="image/*" hidden><img id="leaf-preview" alt="Uploaded crop leaf preview" hidden></label>
+          <button class="button button-primary detect-button" id="detect-button" type="button" disabled>Run demo check <span aria-hidden="true">→</span></button>
+          <div class="diagnosis-result" id="diagnosis-result" aria-live="polite" hidden></div>
+          <p class="disclaimer"><strong>Important:</strong> This demo is not an actual AI diagnosis. Do not use it to make treatment decisions. For crop-specific advice, contact an agricultural extension officer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tips-section section" id="learn">
+      <div class="container"><div class="section-heading heading-row"><div><p class="section-kicker">SMALL CHANGES, STRONGER FARMS</p><h2>Good practices<br><em>grow good things.</em></h2></div><a class="text-link" href="#fertilizer">Explore recommendations <span aria-hidden="true">↗</span></a></div>
+        <div class="tips-grid">
+          <article class="tip-card"><img src="https://images.unsplash.com/photo-1499529112087-3cb3b73ceafe?auto=format&fit=crop&w=800&q=85" alt="Fresh green crops growing in a field" loading="lazy"><div class="tip-content"><span class="tip-tag">SOIL & ORGANICS</span><h3>Feed the soil, not just the crop</h3><p>Use compost and well-rotted organic matter to support soil structure and beneficial life.</p><a href="#fertilizer" aria-label="Get soil recommendations">Learn more <span aria-hidden="true">→</span></a></div></article>
+          <article class="tip-card"><img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=800&q=85" alt="Carefully tended rows of crops" loading="lazy"><div class="tip-content"><span class="tip-tag">WATER WISELY</span><h3>Make every drop count</h3><p>Consider drip or scheduled irrigation and check soil moisture before watering.</p><a href="#weather" aria-label="Check weather before irrigation">Check conditions <span aria-hidden="true">→</span></a></div></article>
+          <article class="tip-card"><img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0a9c2c?auto=format&fit=crop&w=800&q=85" alt="Farmer inspecting healthy green leaves" loading="lazy"><div class="tip-content"><span class="tip-tag">INTEGRATED PEST CARE</span><h3>Scout early, respond thoughtfully</h3><p>Inspect plants regularly, encourage beneficial insects and identify pests before acting.</p><a href="#disease" aria-label="Open plant health checker">Check plant health <span aria-hidden="true">→</span></a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="fertilizer-section section" id="fertilizer">
+      <div class="container fertilizer-layout"><div><p class="section-kicker">NOURISH WITH KNOWLEDGE</p><h2>Start with your<br><em>soil and crop.</em></h2><p class="section-intro">Get a general starting point for nutrient planning. Every field is different, so a soil test should come first.</p><div class="fertilizer-decoration" aria-hidden="true">✳</div></div>
+        <form class="recommendation-card" id="fertilizer-form"><label for="fertilizer-crop">What are you growing?</label><select id="fertilizer-crop" required><option value="">Select a crop</option><option>Rice</option><option>Wheat</option><option>Maize</option><option>Cotton</option><option>Sugarcane</option><option>Tomato</option></select><label for="soil-type">Choose your soil type</label><select id="soil-type" required><option value="">Select soil type</option><option>Alluvial</option><option>Clay</option><option>Loamy</option><option>Sandy</option><option>Black</option><option>Red</option></select><button class="button button-primary recommendation-button" type="submit">Show general guidance <span aria-hidden="true">→</span></button><div class="recommendation-result" id="recommendation-result" aria-live="polite" hidden></div><p class="soil-caveat"><span aria-hidden="true">ⓘ</span> Recommendations are general only. Confirm nutrient needs with a laboratory soil test and local agricultural guidance.</p></form>
+      </div>
+    </section>
+
+    <section class="contact-section section" id="contact"><div class="container contact-layout"><div class="contact-copy"><p class="section-kicker">WE’RE HERE TO HELP</p><h2>Let’s grow<br><em>something good.</em></h2><p class="section-intro">Have a question or want to learn more? Send us a message and our team will be in touch.</p><div class="contact-detail"><span aria-hidden="true">✉</span><a href="mailto:hello@agrismart.example">hello@agrismart.example</a></div><div class="contact-detail"><span aria-hidden="true">⌖</span><span>Supporting farms, wherever you grow</span></div></div>
+        <form class="contact-form" id="contact-form" novalidate><div class="form-row"><label>Your name<input name="name" type="text" placeholder="e.g. Priya Kumar" autocomplete="name" required minlength="2"></label><label>Email address<input name="email" type="email" placeholder="you@example.com" autocomplete="email" required></label></div><label>Phone number <span class="optional">(optional)</span><input name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel"></label><label>Your message<textarea name="message" rows="4" placeholder="How can we help your farm thrive?" required minlength="10"></textarea></label><button class="button button-primary" type="submit">Send message <span aria-hidden="true">↗</span></button><p class="form-status" id="contact-status" role="status"></p></form>
+      </div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-main"><div class="footer-brand-group"><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">✳</span><span>Agri<span>Smart</span></span></a><p>Growing a more informed, resilient future for agriculture.</p></div><div class="footer-links"><strong>Explore</strong><a href="#crops">Crop library</a><a href="#weather">Local weather</a><a href="#learn">Farming tips</a></div><div class="footer-links"><strong>Get in touch</strong><a href="mailto:hello@agrismart.example">hello@agrismart.example</a><a href="#contact">Contact our team</a><div class="social-links"><a href="https://www.facebook.com/" aria-label="Facebook">f</a><a href="https://www.instagram.com/" aria-label="Instagram">◎</a><a href="https://www.youtube.com/" aria-label="YouTube">▶</a></div></div></div><div class="container footer-bottom"><span>© <span id="current-year"></span> AgriSmart. Growing smarter, together.</span><a href="#home">Back to top ↑</a></div></footer>
+</body>
+</html>
